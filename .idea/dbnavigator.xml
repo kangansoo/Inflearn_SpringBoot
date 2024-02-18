@@ -39,14 +39,27 @@ select * from fruit;
 
 update fruit set price = 1500 where name='사과';
 
-delete from fruit where name = '사과';]]></console>
+delete from fruit where name = '사과';
+
+create table user (
+    id bigint auto_increment,
+    name varchar(25),
+    age int,
+    primary key (id)
+);
+
+show tables;
+
+select * from user;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="74f3ea38-a018-4386-bdd4-ac648684fd74" object-ref="consoles/Connection" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="74f3ea38-a018-4386-bdd4-ac648684fd74">
