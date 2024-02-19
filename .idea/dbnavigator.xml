@@ -6,7 +6,7 @@
   </component>
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -17,7 +17,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="74f3ea38-a018-4386-bdd4-ac648684fd74">
-      <console name="Connection" type="STANDARD" schema="mysql" session="Main"><![CDATA[use library;
+      <console name="Connection" type="STANDARD" schema="library" session="Main"><![CDATA[use library;
 
 show tables;
 
@@ -48,9 +48,17 @@ create table user (
     primary key (id)
 );
 
+drop table user;
+
 show tables;
 
-select * from user;]]></console>
+select * from user;
+
+use library;
+
+select * from user;
+
+insert into user (name, age) values ('홍길동', 21);]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
