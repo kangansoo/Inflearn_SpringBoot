@@ -1,11 +1,11 @@
 package com.group.libraryapp.domain.user;
 
-public class Fruit {
+public class Fruit_ {
 
     private String name;
     private int price;
 
-    public Fruit(String name, int price) {
+    public Fruit_(String name, int price) {
         this.name = name;
         this.price = price;
     }

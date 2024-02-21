@@ -48,24 +48,31 @@ create table user (
     primary key (id)
 );
 
-drop table user;
+show databases;
+
+create database fruit;
+
+use fruit;
 
 show tables;
 
-select * from user;
+create table fruit(
+    id integer auto_increment primary key,
+    name varchar(50),
+    warehousingDate date,
+    price bigint
+);
 
-use library;
-
-select * from user;
-
-insert into user (name, age) values ('홍길동', 21);]]></console>
+select * from fruit;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="74f3ea38-a018-4386-bdd4-ac648684fd74" object-ref="consoles/Connection" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="74f3ea38-a018-4386-bdd4-ac648684fd74">
