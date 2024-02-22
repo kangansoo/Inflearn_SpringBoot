@@ -50,29 +50,38 @@ create table user (
 
 show databases;
 
-create database fruit;
+create database test;
 
+use test;
+
+drop database fruit;
+use library;
 use fruit;
 
 show tables;
 
+drop table fruit;
+
 create table fruit(
-    id integer auto_increment primary key,
+    id bigint auto_increment primary key,
     name varchar(50),
     warehousingDate date,
-    price bigint
+    price bigint,
+    isSold boolean default false
 );
 
-select * from fruit;]]></console>
+select * from fruit;
+show databases;
+use fruit;
+
+INSERT INTO fruit(name, warehousingDate, price) VALUES("오렌지","2024-02-01",6000);]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="74f3ea38-a018-4386-bdd4-ac648684fd74" object-ref="consoles/Connection" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="74f3ea38-a018-4386-bdd4-ac648684fd74">
