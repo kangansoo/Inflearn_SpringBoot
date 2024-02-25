@@ -6,15 +6,17 @@ import com.group.libraryapp.dto.user.response.UserResponse;
 import com.group.libraryapp.repository.user.UserRepository;
 import org.springframework.boot.autoconfigure.batch.BatchProperties;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class UserService {
 
     private final UserRepository userRepository;
 
-    public UserService(JdbcTemplate jdbcTemplate){
-        userRepository = new UserRepository(jdbcTemplate);
+    public UserService(UserRepository userRepository){
+        this.userRepository=userRepository;
     };
 
     public void saveUser(UserCreateRequest request){
