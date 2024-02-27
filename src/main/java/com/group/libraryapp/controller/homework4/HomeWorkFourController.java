@@ -3,18 +3,15 @@ package com.group.libraryapp.controller.homework4;
 import com.group.libraryapp.dto.homework4.FruitResponse;
 import com.group.libraryapp.dto.homework4.FruitUpdateRequest;
 import com.group.libraryapp.dto.homework4.SaveFruitRequest;
-import com.group.libraryapp.service.homework4.FruitService;
-import org.springframework.jdbc.core.JdbcTemplate;
+import com.group.libraryapp.service.homework4.FruitServiceV2;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 public class HomeWorkFourController {
 
-    private final FruitService fruitService;
+    private final FruitServiceV2 fruitService;
 
-    public HomeWorkFourController(FruitService fruitService) {
+    public HomeWorkFourController(FruitServiceV2 fruitService) {
         this.fruitService = fruitService;
     }
 

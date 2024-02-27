@@ -1,16 +1,15 @@
 package com.group.libraryapp.repository.homework4;
 
-import com.group.libraryapp.dto.homework4.FruitResponse;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
 
 @Repository
-public class FruitRepository {
+public class FruitJdbcRepository {
 
     private final JdbcTemplate jdbcTemplate;
-    public FruitRepository(JdbcTemplate jdbcTemplate) {
+    public FruitJdbcRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
