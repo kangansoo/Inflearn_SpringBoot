@@ -38,4 +38,15 @@ public class FruitServiceV2 {
                 .mapToLong(Fruit::getPrice).sum();
         return new FruitResponse(salesAmount, notSalesAmount);
     }
+
+    public long countFruit(String name){
+        return fruitRepository.countByName(name);
+    }
+
+    public List<Fruit> getFruitList(String option, long price) {
+        if (option.equals("GTE")){
+            return fruitRepository.findAllByPriceGreaterThan(price);
+        }
+        return fruitRepository.findAllByPriceLessThan(price);
+    }
 }
