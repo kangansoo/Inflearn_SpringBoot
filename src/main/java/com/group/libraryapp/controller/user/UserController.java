@@ -4,7 +4,7 @@ import com.group.libraryapp.dto.user.request.UserCreateRequest;
 import com.group.libraryapp.dto.user.request.UserUpdateRequest;
 import com.group.libraryapp.dto.user.response.UserResponse;
 import com.group.libraryapp.service.fruit.FruitServicePr;
-import com.group.libraryapp.service.user.UserServiceV1;
+import com.group.libraryapp.service.user.UserServiceV2;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,30 +13,28 @@ import java.util.List;
 @RestController
 public class UserController {
 
-    private final UserServiceV1 userServiceV1;
-    private final FruitServicePr fruitService;
+    private final UserServiceV2 userService;
 
-    public UserController(UserServiceV1 userServiceV1, @Qualifier("main") FruitServicePr fruitService) {
-        this.userServiceV1 = userServiceV1;
-        this.fruitService = fruitService;
+    public UserController(UserServiceV2 userService, @Qualifier("main") FruitServicePr fruitService) {
+        this.userService = userService;
     }
     @PostMapping("/user")
     public void saveUser(@RequestBody UserCreateRequest request){
-        userServiceV1.saveUser(request);
+        userService.saveUser(request);
     }
 
     @GetMapping("/user")
     public List<UserResponse> getUsers(){
-        return userServiceV1.getUsers();
+        return userService.getUsers();
     }
 
     @PutMapping("/user")
     public void updateUser(@RequestBody UserUpdateRequest request){
-        userServiceV1.updateUser(request);
+        userService.updateUser(request);
     }
 
     @DeleteMapping("/user")
     public void deleteUser(@RequestParam String name){
-        userServiceV1.deleteUser(name);
+        userService.deleteUser(name);
     }
 }
